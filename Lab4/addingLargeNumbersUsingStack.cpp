@@ -30,13 +30,20 @@ void addLargeNumbers(string a = "", string b="")
 
     while(!op1.isEmpty())
     {
-        res.push(op1.pop());
+        res.push(op1.pop() + carry);
+        carry = 0;
     }
     while(!op2.isEmpty())
     {
-        res.push(op2.pop());
+        res.push(op2.pop() + carry);
+        carry = 0;
     }
-
+	
+	if(carry > 0)
+	{
+		res.push(carry);
+	}
+	
     while(!res.isEmpty())
     {
         cout << res.pop();
