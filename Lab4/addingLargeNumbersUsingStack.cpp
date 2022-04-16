@@ -30,13 +30,17 @@ void addLargeNumbers(string a = "", string b="")
 
     while(!op1.isEmpty())
     {
-        res.push(op1.pop() + carry);
-        carry = 0;
+        int sum = op1.pop() + carry;
+    	carry = sum/10;
+    	sum = sum % 10;
+        res.push(sum);
     }
     while(!op2.isEmpty())
     {
-        res.push(op2.pop() + carry);
-        carry = 0;
+    	int sum = op2.pop() + carry;
+    	carry = sum/10;
+    	sum = sum % 10;
+        res.push(sum);
     }
 	
 	if(carry > 0)
